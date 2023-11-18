@@ -1,11 +1,20 @@
+"use client";
+
 import Button from "@/components/Button";
-import ButtonOtherLogin from "@/components/form/ButtonOtherLogin";
 import InputDefault from "@/components/form/InputDefault";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGoogle } from "react-icons/fa";
+import { FormEvent, useState } from "react";
 
 const Page = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+    const handleSignup = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+    };
+
     return (
         <div className="flex items-center h-screen justify-center gap-x-32">
             <section className="flex flex-col justify-center items-center h-screen  lg:max-w-lg ">
@@ -16,12 +25,36 @@ const Page = () => {
                     </span>
                 </div>
                 <section className="flex flex-col items-center w-full md:max-w-md">
-                    <form className="w-full mb-10 mt-10 space-y-5 ">
-                        <InputDefault type="text" text="Email" />
-                        <InputDefault type="password" text="Senha" />
-                        <InputDefault type="password" text="Confirme a senha" />
+                    <form
+                        onSubmit={handleSignup}
+                        className="w-full mb-10 mt-10 space-y-5 "
+                    >
+                        <InputDefault
+                            trackEmail={{
+                                email: email,
+                                setEmail: setEmail,
+                            }}
+                            type="text"
+                            text="Email"
+                        />
+                        <InputDefault
+                            trackPass={{
+                                password: password,
+                                setPassword: setPassword,
+                            }}
+                            type="password"
+                            text="Senha"
+                        />
+                        <InputDefault
+                            trackPass={{
+                                password: confirmPassword,
+                                setPassword: setConfirmPassword,
+                            }}
+                            type="password"
+                            text="Confirme a senha"
+                        />
+                        <Button text="Cadastrar" type="submit" />
                     </form>
-                    <Button text="Cadastrar" />
                     <p className="text-sm mt-10">
                         Já faz parte da MedVirtua? <br />
                         <Link
