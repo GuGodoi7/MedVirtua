@@ -9,32 +9,26 @@ const Page = () => {
     return (
         <div className="flex items-center h-screen justify-center gap-x-32">
             <section className="flex flex-col justify-center items-center h-screen  lg:max-w-lg ">
-                <div className="flex items-center gap-x-1 mb-20">
-                    <div className="bg-zinc-300 w-10 aspect-square rounded-full" />
+                <div className="flex items-center gap-x-1">
+                    <div className="bg-zinc-300 w-10 aspect-square rounded-full " />
                     <span className="font-bold hidden md:block">
                         Med<span className="text-highlight ">Virtua</span>
                     </span>
                 </div>
                 <section className="flex flex-col items-center w-full md:max-w-md">
-                    <ButtonOtherLogin icon={<FaGoogle className="h-5 w-5" />} />
-                    <form className="w-full mt-10 space-y-5 ">
+                    <form className="w-full mb-10 mt-10 space-y-5 ">
                         <InputDefault type="text" text="Email" />
-                        <InputDefault type="password" text="Password" />
+                        <InputDefault type="password" text="Senha" />
+                        <InputDefault type="password" text="Confirme a senha" />
                     </form>
-                    <Link
-                        href={"#"}
-                        className="text-highlight mb-10 text-sm self-end mt-5 underline-offset-2 underline"
-                    >
-                        Esqueceu a sua senha?
-                    </Link>
-                    <Button text="Logar" />
+                    <Button text="Cadastrar" />
                     <p className="text-sm mt-10">
-                        Ainda não faz parte da MedVirtua? <br />
+                        Já faz parte da MedVirtua? <br />
                         <Link
                             href={"#"}
                             className="text-highlight underline underline-offset-2"
                         >
-                            Crie uma conta
+                            Faça o login
                         </Link>
                     </p>
                 </section>
