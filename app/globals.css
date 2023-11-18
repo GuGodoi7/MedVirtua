@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.bg__banner {
+    background: linear-gradient(
+        180deg,
+        rgba(64, 60, 255, 1) 47.91666567325592%,
+        rgba(3, 0, 153, 0) 100%
+    );
+}

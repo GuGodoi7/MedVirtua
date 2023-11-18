@@ -1,6 +1,10 @@
+import Banner from "@/components/Banner"
+
+
 const Home = () => {
-    const string = "mi"
-    return <></>;
+    return <>
+        <Banner/>
+    </>;
 };
 
 export default Home;
