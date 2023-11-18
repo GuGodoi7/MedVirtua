@@ -27,7 +27,7 @@ const Page = () => {
                 <section className="flex flex-col items-center w-full md:max-w-md">
                     <form
                         onSubmit={handleSignup}
-                        className="w-full mb-10 mt-10 space-y-5 "
+                        className="w-full mt-10 gap-y-5 flex flex-col"
                     >
                         <InputDefault
                             trackEmail={{
@@ -53,7 +53,7 @@ const Page = () => {
                             type="password"
                             text="Confirme a senha"
                         />
-                        <Button text="Cadastrar" type="submit" />
+                        <Button text="Cadastrar" type="submit" extraStyle="self-center mt-5"/>
                     </form>
                     <p className="text-sm mt-10">
                         Já faz parte da MedVirtua? <br />
