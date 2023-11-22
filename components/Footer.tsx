@@ -53,7 +53,7 @@ const Footer = () => {
     });
 
     return (
-        <footer className="mt-10 p-10 max-w-6xl mx-auto">
+        <footer className="mt-10 p-10 max-w-6xl mx-auto border-t border-text/20">
             <div className="flex items-center gap-x-1">
                 <div className="bg-zinc-300 w-10 font-bold aspect-square rounded-full" />
                 <p className="font-semibold">

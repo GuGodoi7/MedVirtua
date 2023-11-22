@@ -28,7 +28,7 @@ const Header = () => {
     ];
 
     return (
-        <header className="flex justify-between items-center px-10 py-5 lg:max-w-6xl mx-auto relative lg:flex-row-reverse">
+        <header className="flex justify-between items-center px-10 py-5 lg:max-w-6xl mx-auto relative lg:flex-row-reverse border-b border-text/20">
             <IoMenu
                 className="w-10 h-10 lg:hidden cursor-pointer"
                 onClick={() => {
@@ -47,7 +47,7 @@ const Header = () => {
                             key={l.name}
                             className={`${
                                 path === l.link ? "bg-highlight text-white" : ""
-                            } flex items-center gap-x-2 p-2 rounded-md md:hover:text-highligh`}
+                            } flex items-center gap-x-2 p-2 rounded-md md:hover:text-highligh cursor-pointer`}
                         >
                             {l.icon}
                             <Link href={l.link}>{l.name}</Link>
