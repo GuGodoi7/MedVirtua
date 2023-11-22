@@ -1,4 +1,57 @@
+"use client";
+import { useEffect, useState } from "react";
+
+const equipe = [
+    {
+        name: "Amorgan ...",
+        fullName: "Amorgan Mendes Lopes",
+    },
+    {
+        name: "Gustavo ...",
+        fullName: "Gustavo Godoi da Silva",
+    },
+    {
+        name: "Matheus ...",
+        fullName: "Melissa de Oliveira Pecoraro",
+    },
+    {
+        name: "Melissa ...",
+        fullName: "Matheus Chagas de Moraes Sampaio",
+    },
+    {
+        name: "Roberto ...",
+        fullName: "Roberto Menezes dos Santos",
+    },
+];
+
+const servicos = [
+    {
+        text: "Calendário de vacinas",
+    },
+    {
+        text: "Tratamentos",
+    },
+    {
+        text: "Clinicas",
+    },
+    {
+        text: "Mapa das doenças",
+    },
+];
+
 const Footer = () => {
+    const [windowSize, setWindowSize] = useState<number>(
+        typeof window !== "undefined" ? window.innerWidth : 0
+    );
+
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            setWindowSize(
+                typeof window !== "undefined" ? window.innerWidth : 0
+            );
+        });
+    });
+
     return (
         <footer className="mt-10 p-10 max-w-6xl mx-auto">
             <div className="flex items-center gap-x-1">
@@ -21,36 +74,25 @@ const Footer = () => {
             <section className="flex justify-between mt-10 md:justify-start gap-x-16">
                 <div>
                     <h2 className="font-semibold text-text mb-2">Serviços</h2>
-                    <p className="text-black/60 text-sm md:text-md lg:hover:underline lg:hover:underline-offset-2">
-                        Calendário de vacinas
-                    </p>
-                    <p className="text-black/60 text-sm md:text-md lg:hover:underline lg:hover:underline-offset-2">
-                        Tratamentos
-                    </p>
-                    <p className="text-black/60 text-sm md:text-md lg:hover:underline lg:hover:underline-offset-2">
-                        Clinicas
-                    </p>
-                    <p className="text-black/60 text-sm md:text-md lg:hover:underline lg:hover:underline-offset-2">
-                        Mapa das doenças
-                    </p>
+                    {servicos.map((s) => (
+                        <p
+                            key={s.text}
+                            className="text-black/60 text-sm md:text-md lg:hover:underline lg:hover:underline-offset-2"
+                        >
+                            {s.text}
+                        </p>
+                    ))}
                 </div>
                 <div className="text-right md:text-start md:border-l-2 border-black/60 md:pl-16">
                     <h2 className="font-semibold text-text mb-2">Equipe</h2>
-                    <p className="text-black/60 text-sm md:text-md lg:hover:underline lg:hover:underline-offset-2">
-                        Amorgan Lopes ...
-                    </p>
-                    <p className="text-black/60 text-sm md:text-md lg:hover:underline lg:hover:underline-offset-2">
-                        Gustavo ...
-                    </p>
-                    <p className="text-black/60 text-sm md:text-md lg:hover:underline lg:hover:underline-offset-2">
-                        Matheus ...
-                    </p>
-                    <p className="text-black/60 text-sm md:text-md lg:hover:underline lg:hover:underline-offset-2">
-                        Melissa ...
-                    </p>
-                    <p className="text-black/60 text-sm md:text-md lg:hover:underline lg:hover:underline-offset-2">
-                        Roberto ...
-                    </p>
+                    {equipe.map((e) => (
+                        <p
+                            key={e.fullName}
+                            className="text-black/60 text-sm md:text-md lg:hover:underline lg:hover:underline-offset-2"
+                        >
+                            {windowSize < 767 ? e.name : e.fullName}
+                        </p>
+                    ))}
                 </div>
             </section>
         </footer>
