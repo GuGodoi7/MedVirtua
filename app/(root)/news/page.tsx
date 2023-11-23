@@ -31,8 +31,8 @@ const NewsContainer = ({ extraStyle }: { extraStyle?: string }) => {
                 className="flex flex-col p-2 overflow-y-hidden
             lg:absolute lg:top-2/3"
             >
-                <span className="lg:text-white">Nome</span>
-                <span className="lg:text-white text-sm text-text/75 font-light">
+                <span className="lg:text-white lg:font-bold">Nome</span>
+                <span className="lg:text-white lg:font-medium text-sm text-text/75 font-light">
                     Descrição
                 </span>
             </section>

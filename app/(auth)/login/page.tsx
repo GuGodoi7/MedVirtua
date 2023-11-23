@@ -18,14 +18,14 @@ const Page = () => {
 
     return (
         <div className="flex items-center h-screen justify-center gap-x-32">
-            <section className="flex flex-col justify-center items-center h-screen  lg:max-w-lg ">
+            <section className="flex flex-col justify-center items-center h-screen w-full lg:max-w-md ">
                 <div className="flex items-center gap-x-1 mb-20">
                     <div className="bg-zinc-300 w-10 aspect-square rounded-full" />
                     <span className="font-bold hidden md:block">
                         Med<span className="text-highlight ">Virtua</span>
                     </span>
                 </div>
-                <section className="flex flex-col items-center w-full md:max-w-md">
+                <section className="flex flex-col items-center w-full md:max-w-lg">
                     <ButtonOtherLogin icon={<FaGoogle className="h-5 w-5" />} />
                     <form
                         className="w-full mt-10 space-y-5 flex flex-col items-center"

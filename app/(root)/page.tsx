@@ -15,6 +15,7 @@ const Home = () => {
                     vacinações mas ser avisado sobre épocas de vacina
                 </p>
                 <Button
+                    link="/sign_up"
                     text="cadastrar"
                     extraStyle="mt-10 lg:max-w-md w-full"
                 />

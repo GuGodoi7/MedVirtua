@@ -17,14 +17,14 @@ const Page = () => {
 
     return (
         <div className="flex items-center h-screen justify-center gap-x-32">
-            <section className="flex flex-col justify-center items-center h-screen  lg:max-w-lg ">
+            <section className="flex flex-col justify-center items-center h-screen w-full lg:max-w-md">
                 <div className="flex items-center gap-x-1">
                     <div className="bg-zinc-300 w-10 aspect-square rounded-full " />
                     <span className="font-bold hidden md:block">
                         Med<span className="text-highlight ">Virtua</span>
                     </span>
                 </div>
-                <section className="flex flex-col items-center w-full md:max-w-md">
+                <section className="flex flex-col items-center w-full md:max-w-lg">
                     <form
                         onSubmit={handleSignup}
                         className="w-full mt-10 gap-y-5 flex flex-col items-center"
