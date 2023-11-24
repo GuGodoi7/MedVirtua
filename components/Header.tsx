@@ -3,7 +3,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import { FaHome, FaCalendar, FaRegNewspaper } from "react-icons/fa";
+import { IoPersonCircleOutline } from "react-icons/io5";
 import { usePathname } from "next/navigation";
+import { FaFileSignature } from "react-icons/fa";
 
 const Header = () => {
     const [open, setOpen] = useState(false);
@@ -57,24 +59,30 @@ const Header = () => {
                         {l.name}
                     </Link>
                 ))}
+                
             </nav>
-            <ul
+            <nav    
                 className={`absolute p-10 z-10 rounded-b-xl bg-white scale-y-0
             transition-transform duration-100 ${open && "scale-y-100"} lg:hidden
-            origin-top w-60 md:hover:cursor-pointer top-full left-0 h-fit gap-y-4 flex flex-col`}
+            origin-top w-60 md:hover:cursor-pointer top-full left-0 h-fijt gap-y-4 flex flex-col`}
             >
                 {headerLinks.map((l) => (
-                    <li
-                        key={l.name}
+                    <Link key={l.name}
                         className={`md:hover:pl-3 ${
                             path === l.link ? "bg-highlight text-white" : ""
-                        } rounded-md p-2 flex items-center gap-x-4`}
-                    >
-                        {l.icon}
-                        <Link href={l.link}>{l.name}</Link>
-                    </li>
+                        } rounded-md p-2 flex items-center gap-x-4`} href={l.link}>
+                        {l.icon}{l.name}
+                    </Link>
                 ))}
-            </ul>
+                <Link href={"/login"} className="md:hover:pl-3 rounded-md p-2 flex items-center gap-x-4">
+                    <IoPersonCircleOutline/>
+                    Login
+                </Link>
+                <Link href={"/sign_up"} className="md:hover:pl-3 rounded-md p-2 flex items-center gap-x-4">
+                    <FaFileSignature/>
+                    Cadastro
+                </Link>
+            </nav>
         </header>
     );
 };
