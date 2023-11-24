@@ -6,14 +6,15 @@ interface IButton {
     extraStyle?: string;
     color?: string;
     link?: string;
+    size?: string;
 }
 
-const Button = ({ type, text, link, color, extraStyle }: IButton) => {
+const Button = ({ type, text, link, color, extraStyle, size }: IButton) => {
     return (
         <Link href={link ? link : "#"}>
             <button
                 type={type ?? "button"}
-                className={`w-[219px] h-[40px] active:scale-[0.95] ${
+                className={`${size ? size : "w-52 h-10"} active:scale-[0.95] ${
                     color ? color : "bg-highlight"
                 } rounded-md text-white font-bold ${extraStyle}`}
             >

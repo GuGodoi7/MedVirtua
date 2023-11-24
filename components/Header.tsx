@@ -36,7 +36,7 @@ const Header = () => {
                 }}
             />
             <div className="hidden lg:flex items-center gap-x-1">
-                <Link href={"/login"} className="p-2 hover:bg-text hover:text-white rounded-md">login</Link>
+                <Link href={"/login"} className="p-2 hover:bg-text hover:text-white rounded-md">Login</Link>
                 /
                 <Link href={"/sign_up"} className="p-2 hover:bg-text hover:text-white rounded-md">Cadastro</Link>
             </div>

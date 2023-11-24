@@ -1,25 +1,17 @@
-"use client";
-import { useEffect, useState } from "react";
-
 const equipe = [
     {
-        name: "Amorgan ...",
         fullName: "Amorgan Mendes Lopes",
     },
     {
-        name: "Gustavo ...",
         fullName: "Gustavo Godoi da Silva",
     },
     {
-        name: "Matheus ...",
         fullName: "Melissa de Oliveira Pecoraro",
     },
     {
-        name: "Melissa ...",
         fullName: "Matheus Chagas de Moraes Sampaio",
     },
     {
-        name: "Roberto ...",
         fullName: "Roberto Menezes dos Santos",
     },
 ];
@@ -40,18 +32,6 @@ const servicos = [
 ];
 
 const Footer = () => {
-    const [windowSize, setWindowSize] = useState<number>(
-        typeof window !== "undefined" ? window.innerWidth : 0
-    );
-
-    useEffect(() => {
-        window.addEventListener("resize", () => {
-            setWindowSize(
-                typeof window !== "undefined" ? window.innerWidth : 0
-            );
-        });
-    });
-
     return (
         <footer className="mt-10 p-10 max-w-6xl mx-auto border-t border-text/20">
             <div className="flex items-center gap-x-1">
@@ -90,7 +70,7 @@ const Footer = () => {
                             key={e.fullName}
                             className="text-black/60 text-sm md:text-md lg:hover:underline lg:hover:underline-offset-2"
                         >
-                            {windowSize < 767 ? e.name : e.fullName}
+                            {e.fullName}
                         </p>
                     ))}
                 </div>

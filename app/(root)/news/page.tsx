@@ -1,6 +1,6 @@
 "use client";
-import { news } from "@/api/news/backend";
-import { INews } from "@/type";
+import { news } from "@/api/news";
+import { INews } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosSearch } from "react-icons/io";

@@ -1,16 +1,9 @@
 "use client";
+import { IVaccine } from "@/types";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import {vaccines} from "@/api/vaccines"
 
-type IVaccine = {
-  name: string;
-  day: number;
-  month: number;
-  monthName: string;
-  year: number;
-  madeBy: string;
-  id: number
-};
 
 const CardDate = (v: IVaccine) => {
     return (
@@ -28,36 +21,6 @@ const CardDate = (v: IVaccine) => {
         </div>
     );
 };
-
-const vaccines = [
-    {
-        id: 1,
-        name: "Raiva",
-        day: 12,
-        month: 11,
-        monthName: "Novembro",
-        year: 2023,
-        madeBy: "Marcos",
-    },
-    {
-        id: 2,
-        name: "Gripe",
-        day: 12,
-        month: 11,
-        monthName: "Novembro",
-        year: 2023,
-        madeBy: "Marcos",
-    },
-    {
-        id: 3,
-        name: "Dengue",
-        day: 12,
-        month: 12,
-        monthName: "Dezembro",
-        year: 2023,
-        madeBy: "Marcos",
-    }
-];
 
 const Calendar = () => {
     const lastMonth = useRef<number>();
@@ -82,7 +45,7 @@ const Calendar = () => {
         <div className="flex flex-col items-center gap-y-10">
             {vaccines.map((v) => 
                 (
-                    <Link key={v.id} className="flex flex-col items-center gap-y-10" href="#">
+                    <Link key={v.id} className="flex flex-col items-center gap-y-10" href={`/calendar/info/${v.id}`}>
                         {isMonthEqual(v)}
                         <CardDate  {...v} />
                     </Link>
