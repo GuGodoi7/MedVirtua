@@ -23,6 +23,9 @@ const InputDefault = ({
 }: IInputDefaultProps) => {
     const [seePassword, setSeePassword] = useState<boolean>(false);
 
+    const placeholderText =
+        type === "password" ? "Informe sua senha" : "Informe o seu email";
+
     return (
         <div className="w-full relative">
             <label className="text-sm block" htmlFor="formInput">
@@ -38,8 +41,8 @@ const InputDefault = ({
                         : type
                 }
                 required
-                placeholder="Informe o seu email"
-                className="p-2 w-full  text max-w-md border-border_color border-2 outline-none rounded-md"
+                placeholder={placeholderText}
+                className="p-2 w-full text max-w-md border-border_color border-2 outline-none rounded-md"
                 value={
                     type === "text" ? trackEmail?.email : trackPass?.password
                 }
