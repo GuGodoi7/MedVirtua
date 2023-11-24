@@ -29,7 +29,7 @@ const Page = () => {
                     >
                         <InputDefault
                             type="text"
-                            text="Email"
+                            text="E-mail"
                             trackEmail={{
                                 email: email,
                                 setEmail: setEmail,
@@ -52,7 +52,7 @@ const Page = () => {
                         <Button text="Logar" type={"submit"} />
                     </form>
                     <p className="text-sm mt-10">
-                        Ainda não faz parte da MedVirtua? <br />
+                        Venha fazer parte da MedVirtua? <br />
                         <Link
                             href={"sign_up"}
                             className="text-highlight underline underline-offset-2"
