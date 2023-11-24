@@ -1,6 +1,6 @@
 import { INews } from "@/types";
 
-export const news: INews[] = [
+const news: INews[] = [
     {
         id: 1,
         title: "O que sabemos sobre o novo surto de doenças respiratórias na China ",
@@ -42,3 +42,5 @@ export const news: INews[] = [
         url: "https://www.cnnbrasil.com.br/saude/sorvete-banho-gelado-e-mais-o-que-voce-pode-estar-fazendo-de-errado-no-calor/",
     },
 ];
+
+export default news

@@ -1,20 +1,20 @@
 export interface INews {
-    id: number
+    id: number;
     title: string;
     date: string;
     urlToImage: string;
     url: string;
 }
 
-export interface IComent{
-    name: string
-    date: string
-    content: string
-    vaccineId: number
-    id: number
+export interface IComent {
+    name: string;
+    date: string;
+    content: string;
+    vaccineId: number;
+    id: number;
 }
 
-export interface IVaccine  {
+export interface IVaccine {
     name: string;
     day: number;
     month: number;
@@ -24,5 +24,13 @@ export interface IVaccine  {
     id: number;
     place: string;
     description: string;
-    coments?: IComent[]
-};
+    coments?: IComent[];
+}
+
+export interface IChat {
+    id: number;
+    name: string;
+    sender: number;
+    message: string;
+    vaccineId: number;
+}
