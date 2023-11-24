@@ -1,5 +1,13 @@
+"use client";
+import { news } from "@/api/news/backend";
+import { INews } from "@/type";
+import Image from "next/image";
 import Link from "next/link";
 import { IoIosSearch } from "react-icons/io";
+
+interface INewsContainerProps extends INews {
+    extraStyle?: string;
+}
 
 const SearchInput = ({ extraStyle }: { extraStyle?: string }) => {
     return (
@@ -21,21 +29,35 @@ const SearchInput = ({ extraStyle }: { extraStyle?: string }) => {
     );
 };
 
-const NewsContainer = ({ extraStyle }: { extraStyle?: string }) => {
+const NewsContainer = ({
+    extraStyle,
+    title,
+    date,
+    url,
+    urlToImage,
+}: INewsContainerProps) => {
     return (
         <div
             className={`w-96 lg:w-80 border border-text/50 overflow-hidden rounded-md lg:relative ${extraStyle}`}
         >
-            <div className="bg-zinc-500 w-full h-48" />
-            <section
-                className="flex flex-col p-2 overflow-y-hidden
-            lg:absolute lg:top-2/3"
-            >
-                <span className="lg:text-white lg:font-bold">Nome</span>
-                <span className="lg:text-white lg:font-medium text-sm text-text/75 font-light">
-                    Descrição
-                </span>
-            </section>
+            <Link href={url}>
+                <Image
+                    src={urlToImage}
+                    width={1000}
+                    height={192}
+                    className="w-full"
+                    alt={`image to: ${title} `}
+                />
+                <section
+                    className="flex flex-col p-2 overflow-y-hidden
+                gap-y-2"
+                >
+                    <span className=" text-sm lg:font-medium">{title}</span>
+                    <span className=" lg:font-medium text-sm text-text/75 font-light">
+                        Data: {date}
+                    </span>
+                </section>
+            </Link>
         </div>
     );
 };
@@ -51,13 +73,11 @@ const News = () => {
                 <SearchInput extraStyle="mx-auto lg:w-96" />
             </section>
             <section className="lg:flex lg:mt-10 lg:flex-wrap lg:gap-x-5 lg:justify-center">
-                {Array(5)
-                    .fill(0)
-                    .map((_, i) => (
-                        <Link key={i} href="#">
-                            <NewsContainer extraStyle="mx-auto mt-10" />
-                        </Link>
-                    ))}
+                {news.map((n, i) => (
+                    <Link key={i} href="#">
+                        <NewsContainer {...n} extraStyle="mx-auto mt-10" />
+                    </Link>
+                ))}
             </section>
         </div>
     );
