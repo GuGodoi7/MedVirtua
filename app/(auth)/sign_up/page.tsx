@@ -34,7 +34,7 @@ const Page = () => {
                                 setEmail: setEmail,
                             }}
                             type="text"
-                            text="Email"
+                            text="E-mail"
                         />
                         <InputDefault
                             trackPass={{
